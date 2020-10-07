@@ -26,7 +26,7 @@ console.log(circle.constructor);
  * eg const obj = {}  ====>  const obj = new Object()
  * Others are new String() , new Boolean(), new Number()
  *
- * So, when we create object from self-defines constructor function,
+ * So, when we create object from self-defined constructor function,
  * obectCreated.constructor will return our initial function
  */
 
@@ -170,4 +170,9 @@ console.log(
  * Default values can be set without having parameter (named variable listed in function)
  * or arguments(real value passed while calling the cuntion) passed into it
  * ex: this.defaultSth = 0
+ */
+
+/**
+ *
+ * Callback also called Predicate
  */
