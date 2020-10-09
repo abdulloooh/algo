@@ -57,6 +57,9 @@ function Circle(radius, thickness) {
 
 circle1 = new Circle(10, 6);
 circle2 = new Circle(8, 5);
+//If new keyword is omitted, "this" inside Constructor function will reference
+//window/global object instead of a new object
+//So, "new" tells Js engine to create a new Object and attach reference to "this"
 
 circle1.draw();
 circle2.draw();
