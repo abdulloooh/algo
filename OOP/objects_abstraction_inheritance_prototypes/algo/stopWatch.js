@@ -5,14 +5,14 @@ function StopWatch() {
     duration = 0;
 
   this.start = function () {
-    if (running) throw new Error("Stop watch already started");
+    if (running) throw new Error("Stopwatch already started");
 
     startTime = Date.now();
     running = true;
   };
 
   this.stop = function () {
-    if (!running) throw new Error("Stop watch is not started");
+    if (!running) throw new Error("Stopwatch is not started");
 
     stopTime = Date.now();
     duration += (Number(stopTime) - Number(startTime)) / 1000;
