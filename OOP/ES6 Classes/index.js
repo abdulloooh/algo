@@ -3,6 +3,7 @@
  * Hoisting
  * Static Methods
  * This keyword
+ *
  */
 
 class Circle {
@@ -21,7 +22,12 @@ class Circle {
     console.log(this.radius);
   }
 
-  //static methods
+  /**
+   *
+   * static methods
+   *
+   * TWO types of members: Instance and Static members
+   */
   //they are accessible without having to create a new instance of the object
   // they are MOSTLY USE TO CREATE UNITLITY FUNCTIONS
   static parse(str) {
