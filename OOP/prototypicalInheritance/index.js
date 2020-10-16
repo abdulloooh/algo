@@ -5,6 +5,8 @@
  * Intermediate function Inheritance
  * Method Overriding
  * Polymorphism
+ * When to use Inheritance (Composition > Inheritance)
+ * Composition , mixins
  */
 
 /***
@@ -125,3 +127,56 @@ for (let shape of shapes) {
  * perform a single action in different forms. It provides an ability to
  * call the same method in different Javascript objects.
  */
+
+/**
+ *
+ * Problem with Inheritance
+ * It can lead to complex hierarchies when trying to encapsulate properties e.g
+ *                                  BODY
+ *                  |                               |
+ *           MAMMAL(walk(),eat())            FISH(eat(),swim())
+ *           |                                   |
+ *        Boy,Cat                           Whale,Tilapia
+ * This will lead to serious complexity problem
+ * AVOID CREATING INHERITANCE HIERARCHIES. At most, just one level
+ *
+ * SOLUTION: Composition (using mixins)
+ *
+ */
+
+const canEat = {
+  eat: function () {
+    this.hunger--;
+    console.log("Eating");
+  },
+};
+
+const canWalk = {
+  walk: function () {
+    console.log("walking");
+  },
+};
+
+const canSwim = {
+  swim: function () {
+    console.log("swimming");
+  },
+};
+
+//It may be preferred to have a mixin function
+function mixin(target, ...sources) {
+  Object.assign(target, ...sources);
+}
+
+const cat = {};
+mixin(cat, canWalk, canEat);
+console.log(cat);
+
+//Mixin can also be extended into constructors
+
+function TilapiaFish() {
+  this.hunger = 4;
+}
+mixin(TilapiaFish.prototype, canSwim, canEat);
+
+console.log(new TilapiaFish());
