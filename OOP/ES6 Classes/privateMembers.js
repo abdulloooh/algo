@@ -66,6 +66,7 @@ const _clear = new WeakMap();
 
 class Rectangular {
   constructor(length) {
+    this.writeOnlyValue;
     //ppt
     _length.set(this, length);
 
@@ -80,10 +81,22 @@ class Rectangular {
 
     console.log(_length.get(this));
   }
+
+  //getters and setters
+  get length() {
+    return _length.get(this);
+  } //so r.length can easily be run
+
+  set writeValueOnly(val) {
+    //   _length.set(this,val)
+    if (val < 0) throw new Error("No negative Value Abeg");
+    this.writeOnlyValue = val;
+    console.log(this.writeOnlyValue);
+  }
 }
 
 const r = new Rectangular(10);
-console.log(r);
+console.log(r, r.length);
 r.draw();
 
 /**
