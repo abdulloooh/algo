@@ -1,6 +1,6 @@
 /***
  *
- * ES6 primitive type Symbol
+ * ES6 primitive Symbol type
  * ES6 computed property name
  * ES6 WeakMaps
  */
@@ -28,7 +28,6 @@ class Circlar {
     this[_radius] = radius;
 
     //for methods
-    //Use ES6 computer property names
     // this[_draw] = function () {
     //   console.log(this);
     // };
@@ -38,6 +37,7 @@ class Circlar {
     this.currentValue = factor * this[_radius];
   }
 
+  //Use ES6 computed property names
   [_draw]() {
     console.log(this);
   }

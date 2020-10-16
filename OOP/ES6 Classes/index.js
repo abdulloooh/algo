@@ -2,8 +2,8 @@
  * ES6 classes
  * Hoisting
  * Static Methods
- * This keyword
- *
+ * this keyword
+ * "use strict"
  */
 
 class Circle {

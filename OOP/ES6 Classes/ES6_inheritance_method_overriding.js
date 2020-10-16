@@ -20,7 +20,7 @@ class Circle extends Shape {
     console.log("moved");
   }
 
-  //method overriding
+  //method overriding : Just redefine the method
   draw() {
     //To still use the previous draw method
     super.draw();
