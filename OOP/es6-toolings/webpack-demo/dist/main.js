@@ -1,0 +1,1 @@
+(()=>{"use strict";const s=new WeakMap;class e{constructor(e){s.set(this,e)}draw(){console.log("Circle with radius "+s.get(this))}}new e(10).draw(),console.log(new e(11).draw())})();
